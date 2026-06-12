@@ -1,13 +1,13 @@
 ---
 title: Sommerliche Kartoffelpfanne
 tags:
-  - recipe
-  - food/skillet
-  - food/vegetarian
-  - ingredient/potato
-  - ingredient/tomato
-  - ingredient/arugula
-  - ingredient/feta
+  - rezept
+  - gericht/pfanne
+  - ernaehrung/vegetarisch
+  - zutat/kartoffel
+  - zutat/tomate
+  - zutat/rucola
+  - zutat/feta
 category: Pfannen-Currys
 ---
 # Sommerliche Kartoffelpfanne

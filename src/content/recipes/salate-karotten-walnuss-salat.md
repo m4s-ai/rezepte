@@ -1,12 +1,12 @@
 ---
 title: Karotten-Walnuss-Salat
 tags:
-  - recipe
-  - food/salad
-  - food/vegetarian
-  - ingredient/carrot
-  - ingredient/walnut
-  - ingredient/apple
+  - rezept
+  - gericht/salat
+  - ernaehrung/vegetarisch
+  - zutat/karotte
+  - zutat/walnuss
+  - zutat/apfel
 category: Salate
 ---
 # Karotten-Walnuss-Salat

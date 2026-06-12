@@ -1,13 +1,13 @@
 ---
 title: Spaghetti Carbonara original ohne Sahne
 tags:
-  - recipe
-  - food/pasta
-  - food/italian
-  - ingredient/spaghetti
-  - ingredient/egg
-  - ingredient/pecorino
-  - ingredient/pancetta
+  - rezept
+  - gericht/pasta
+  - kueche/italienisch
+  - zutat/spaghetti
+  - zutat/ei
+  - zutat/pecorino
+  - zutat/pancetta
 category: Pasta
 ---
 # Spaghetti Carbonara original ohne Sahne

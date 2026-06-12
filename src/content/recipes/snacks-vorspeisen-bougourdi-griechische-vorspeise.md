@@ -1,16 +1,15 @@
 ---
 title: Bougourdi (griechische Vorspeise)
 tags:
-  - recipe
-  - food
-  - food/greek
-  - course/vorspeise
-  - ingredient/feta
-  - ingredient/spitzpaprika
-  - ingredient/tomaten
-  - ingredient/olivenoel
-  - ingredient/chili
-  - food/snack
+  - rezept
+  - kueche/griechisch
+  - gang/vorspeise
+  - zutat/feta
+  - zutat/spitzpaprika
+  - zutat/tomate
+  - zutat/olivenoel
+  - zutat/chili
+  - gericht/snack
 category: Snacks-Vorspeisen
 ---
 # Bougourdi (griechische Vorspeise)

@@ -1,14 +1,14 @@
 ---
 title: Kichererbsen-Spinat-Tomaten-Pfanne
 tags:
-  - recipe
-  - food/skillet
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/chickpeas
-  - ingredient/spinach
-  - ingredient/tomato
+  - rezept
+  - gericht/pfanne
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/kichererbsen
+  - zutat/spinat
+  - zutat/tomate
 category: Pfannen-Currys
 ---
 # Kichererbsen-Spinat-Tomaten-Pfanne

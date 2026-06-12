@@ -1,13 +1,13 @@
 ---
 title: Gemüse-Ei-Muffins laktosefrei
 tags:
-  - recipe
-  - food/snack
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/egg
-  - ingredient/spinach
+  - rezept
+  - gericht/snack
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/ei
+  - zutat/spinat
 category: Snacks-Vorspeisen
 ---
 # Gemüse-Ei-Muffins laktosefrei

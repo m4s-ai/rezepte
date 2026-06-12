@@ -1,12 +1,12 @@
 ---
 title: Bohnen-Carbonara
 tags:
-  - recipe
-  - food/pasta
-  - ingredient/spaghetti
-  - ingredient/green-beans
-  - ingredient/bacon
-  - ingredient/egg
+  - rezept
+  - gericht/pasta
+  - zutat/spaghetti
+  - zutat/gruene-bohnen
+  - zutat/bacon
+  - zutat/ei
 category: Pasta
 ---
 # Bohnen-Carbonara

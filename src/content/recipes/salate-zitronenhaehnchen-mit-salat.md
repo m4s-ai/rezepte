@@ -1,14 +1,14 @@
 ---
 title: Zitronenhähnchen mit Salat
 tags:
-  - recipe
-  - food/salad
-  - food/chicken
-  - ingredient/chicken
-  - ingredient/lemon
-  - ingredient/romaine-lettuce
-  - ingredient/almond
-  - course/main
+  - rezept
+  - gericht/salat
+  - gericht/haehnchen
+  - zutat/haehnchen
+  - zutat/zitrone
+  - zutat/romana-salat
+  - zutat/mandel
+  - gang/hauptgericht
 category: Salate
 ---
 # Zitronenhähnchen mit Salat

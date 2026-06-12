@@ -1,14 +1,14 @@
 ---
 title: Best Totchos
 tags:
-  - recipe
-  - food/oven
-  - food/tex-mex
-  - ingredient/tater-tots
-  - ingredient/ground-beef
-  - ingredient/black-beans
-  - ingredient/jalapeno
-  - occasion/party
+  - rezept
+  - gericht/ofengericht
+  - kueche/tex-mex
+  - zutat/tater-tots
+  - zutat/rinderhack
+  - zutat/schwarze-bohnen
+  - zutat/jalapeno
+  - anlass/party
 category: Ofengerichte
 ---
 # Best Totchos

@@ -1,14 +1,14 @@
 ---
 title: Eier in Currysauce
 tags:
-  - recipe
-  - food/curry
-  - food/vegetarian
-  - ingredient/egg
-  - ingredient/curry
-  - ingredient/snow-peas
-  - ingredient/peas
-  - food/skillet
+  - rezept
+  - gericht/curry
+  - ernaehrung/vegetarisch
+  - zutat/ei
+  - zutat/curry
+  - zutat/zuckerschoten
+  - zutat/erbsen
+  - gericht/pfanne
 category: Pfannen-Currys
 ---
 # Eier in Currysauce

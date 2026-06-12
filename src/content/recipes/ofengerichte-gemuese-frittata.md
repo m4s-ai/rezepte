@@ -1,13 +1,13 @@
 ---
 title: Gemüse-Frittata
 tags:
-  - recipe
-  - food/oven
-  - food/vegetarian
-  - ingredient/egg
-  - ingredient/bell-pepper
-  - ingredient/zucchini
-  - ingredient/cream-cheese
+  - rezept
+  - gericht/ofengericht
+  - ernaehrung/vegetarisch
+  - zutat/ei
+  - zutat/paprika
+  - zutat/zucchini
+  - zutat/frischkaese
 category: Ofengerichte
 ---
 # Gemüse-Frittata

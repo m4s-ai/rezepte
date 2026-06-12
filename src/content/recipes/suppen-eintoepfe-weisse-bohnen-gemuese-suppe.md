@@ -1,15 +1,15 @@
 ---
 title: Weiße-Bohnen-Gemüse-Suppe
 tags:
-  - recipe
-  - food/soup
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/white-beans
-  - ingredient/carrot
-  - ingredient/potato
-  - ingredient/celery
+  - rezept
+  - gericht/suppe
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/weisse-bohnen
+  - zutat/karotte
+  - zutat/kartoffel
+  - zutat/sellerie
 category: Suppen-Eintoepfe
 ---
 # Weiße-Bohnen-Gemüse-Suppe

@@ -1,12 +1,12 @@
 ---
 title: Raising Cane's Sauce Copycat
 tags:
-  - recipe
-  - food/sauce
-  - ingredient/mayonnaise
-  - ingredient/ketchup
-  - ingredient/worcestershire-sauce
-  - food/snack
+  - rezept
+  - gericht/sauce
+  - zutat/mayonnaise
+  - zutat/ketchup
+  - zutat/worcestershire-sauce
+  - gericht/snack
 category: Snacks-Vorspeisen
 ---
 # Raising Cane's Sauce Copycat

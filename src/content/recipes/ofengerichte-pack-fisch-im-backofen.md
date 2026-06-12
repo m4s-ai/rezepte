@@ -1,12 +1,12 @@
 ---
 title: Pack-Fisch im Backofen
 tags:
-  - recipe
-  - food/oven
-  - ingredient/fish
-  - ingredient/tomato
-  - ingredient/feta
-  - ingredient/spring-onion
+  - rezept
+  - gericht/ofengericht
+  - zutat/fisch
+  - zutat/tomate
+  - zutat/feta
+  - zutat/fruehlingszwiebel
 category: Ofengerichte
 ---
 # Pack-Fisch im Backofen

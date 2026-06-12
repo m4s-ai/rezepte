@@ -1,14 +1,14 @@
 ---
 title: Bohnen-Kartoffel-Power-Bowl
 tags:
-  - recipe
-  - food/bowl
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/potato
-  - ingredient/green-beans
-  - ingredient/kidney-beans
+  - rezept
+  - gericht/bowl
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/kartoffel
+  - zutat/gruene-bohnen
+  - zutat/kidneybohnen
 category: Bowls
 ---
 # Bohnen-Kartoffel-Power-Bowl

@@ -1,14 +1,14 @@
 ---
 title: Kichererbsen-Meal-Prep-Salat laktosefrei
 tags:
-  - recipe
-  - food/salad
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/chickpeas
-  - ingredient/cucumber
-  - ingredient/bell-pepper
+  - rezept
+  - gericht/salat
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/kichererbsen
+  - zutat/gurke
+  - zutat/paprika
 category: Salate
 ---
 # Kichererbsen-Meal-Prep-Salat laktosefrei

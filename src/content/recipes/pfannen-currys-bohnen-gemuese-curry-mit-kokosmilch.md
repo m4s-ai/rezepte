@@ -1,15 +1,15 @@
 ---
 title: Bohnen-Gemüse-Curry mit Kokosmilch
 tags:
-  - recipe
-  - food/curry
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/beans
-  - ingredient/broccoli
-  - ingredient/carrot
-  - food/skillet
+  - rezept
+  - gericht/curry
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/bohnen
+  - zutat/brokkoli
+  - zutat/karotte
+  - gericht/pfanne
 category: Pfannen-Currys
 ---
 # Bohnen-Gemüse-Curry mit Kokosmilch

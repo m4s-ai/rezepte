@@ -1,14 +1,14 @@
 ---
 title: Ofengemüse mit Weiße-Bohnen-Dip
 tags:
-  - recipe
-  - food/oven
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/white-beans
-  - ingredient/potato
-  - ingredient/broccoli
+  - rezept
+  - gericht/ofengericht
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/weisse-bohnen
+  - zutat/kartoffel
+  - zutat/brokkoli
 category: Ofengerichte
 ---
 # Ofengemüse mit Weiße-Bohnen-Dip

@@ -1,15 +1,15 @@
 ---
 title: 'Couscous-Salat mit Minze, Petersilie und Gemüse'
 tags:
-  - recipe
-  - food/salad
-  - food/vegetarian
-  - food/vegan
-  - ingredient/couscous
-  - ingredient/chickpeas
-  - ingredient/mint
-  - ingredient/parsley
-  - ingredient/cucumber
+  - rezept
+  - gericht/salat
+  - ernaehrung/vegetarisch
+  - ernaehrung/vegan
+  - zutat/couscous
+  - zutat/kichererbsen
+  - zutat/minze
+  - zutat/petersilie
+  - zutat/gurke
 category: Salate
 ---
 # Couscous-Salat mit Minze, Petersilie und Gemüse

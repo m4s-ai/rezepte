@@ -1,13 +1,13 @@
 ---
 title: Spinat-Pasta mit weißen Bohnen laktosefrei
 tags:
-  - recipe
-  - food/pasta
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/spinach
-  - ingredient/white-beans
+  - rezept
+  - gericht/pasta
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/spinat
+  - zutat/weisse-bohnen
 category: Pasta
 ---
 # Spinat-Pasta mit weißen Bohnen laktosefrei

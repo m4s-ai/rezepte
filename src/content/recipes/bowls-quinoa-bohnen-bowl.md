@@ -1,14 +1,14 @@
 ---
 title: Quinoa-Bohnen-Bowl
 tags:
-  - recipe
-  - food/bowl
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/quinoa
-  - ingredient/black-beans
-  - ingredient/corn
+  - rezept
+  - gericht/bowl
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/quinoa
+  - zutat/schwarze-bohnen
+  - zutat/mais
 category: Bowls
 ---
 # Quinoa-Bohnen-Bowl

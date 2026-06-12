@@ -1,11 +1,11 @@
 ---
 title: Limettenquark
 tags:
-  - recipe
-  - food/dessert
-  - ingredient/quark
-  - ingredient/lime
-  - ingredient/cream
+  - rezept
+  - gericht/dessert
+  - zutat/quark
+  - zutat/limette
+  - zutat/sahne
 category: Desserts-Kuchen
 ---
 # Limettenquark

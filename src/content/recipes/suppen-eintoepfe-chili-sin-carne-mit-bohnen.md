@@ -1,16 +1,16 @@
 ---
 title: Chili sin Carne mit Bohnen
 tags:
-  - recipe
-  - food/stew
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/kidney-beans
-  - ingredient/black-beans
-  - ingredient/corn
-  - ingredient/bell-pepper
-  - food/soup
+  - rezept
+  - gericht/eintopf
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/kidneybohnen
+  - zutat/schwarze-bohnen
+  - zutat/mais
+  - zutat/paprika
+  - gericht/suppe
 category: Suppen-Eintoepfe
 ---
 # Chili sin Carne mit Bohnen

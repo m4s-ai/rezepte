@@ -1,13 +1,13 @@
 ---
 title: Bunter Salat mit Ei und Bohnen
 tags:
-  - recipe
-  - food/salad
-  - food/vegetarian
-  - food/lactose-free
-  - food/pregnancy
-  - ingredient/egg
-  - ingredient/beans
+  - rezept
+  - gericht/salat
+  - ernaehrung/vegetarisch
+  - ernaehrung/laktosefrei
+  - ernaehrung/schwangerschaft
+  - zutat/ei
+  - zutat/bohnen
 category: Salate
 ---
 # Bunter Salat mit Ei und Bohnen

@@ -1,14 +1,14 @@
 ---
 title: Steak mit Tomaten-Brot-Salat
 tags:
-  - recipe
-  - food/salad
-  - food/beef
-  - ingredient/steak
-  - ingredient/tomato
-  - ingredient/ciabatta
-  - ingredient/basil
-  - course/main
+  - rezept
+  - gericht/salat
+  - gericht/rindfleisch
+  - zutat/steak
+  - zutat/tomate
+  - zutat/ciabatta
+  - zutat/basilikum
+  - gang/hauptgericht
 category: Salate
 ---
 # Steak mit Tomaten-Brot-Salat

@@ -1,15 +1,15 @@
 ---
 title: Pico de Gallo
 tags:
-  - recipe
-  - food/salsa
-  - food/mexican
-  - food/vegan
-  - ingredient/tomato
-  - ingredient/lime
-  - ingredient/cilantro
-  - ingredient/chili
-  - food/snack
+  - rezept
+  - gericht/salsa
+  - kueche/mexikanisch
+  - ernaehrung/vegan
+  - zutat/tomate
+  - zutat/limette
+  - zutat/koriandergruen
+  - zutat/chili
+  - gericht/snack
 category: Snacks-Vorspeisen
 ---
 # Pico de Gallo
