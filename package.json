@@ -1,0 +1,24 @@
+{
+  "name": "rezepte",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "sync:recipes": "node scripts/sync-recipes.mjs",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "astro": "^5.13.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

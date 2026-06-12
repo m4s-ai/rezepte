@@ -1,0 +1,68 @@
+name: Sync public recipes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Atlas/Recipes/**/*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout second-brain
+        uses: actions/checkout@v4
+        with:
+          repository: rabanopenclaw/second-brain
+          path: second-brain
+
+      - name: Checkout rezepte
+        uses: actions/checkout@v4
+        with:
+          repository: m4s-ai/rezepte
+          token: ${{ secrets.REZEPTE_PUSH_TOKEN }}
+          path: rezepte
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: rezepte/pnpm-lock.yaml
+
+      - name: Install rezepte dependencies
+        working-directory: rezepte
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync public recipes
+        working-directory: rezepte
+        run: pnpm sync:recipes -- --input ../second-brain/Atlas/Recipes
+
+      - name: Verify
+        working-directory: rezepte
+        run: |
+          pnpm test
+          pnpm build
+
+      - name: Commit generated recipe changes
+        working-directory: rezepte
+        run: |
+          git config user.name "rabanopenclaw"
+          git config user.email "rabanopenclaw@users.noreply.github.com"
+          git add -A src/content/recipes
+          if git diff --cached --quiet; then
+            echo "No recipe changes to commit."
+            exit 0
+          fi
+          git commit -m "Sync public recipes"
+          git push

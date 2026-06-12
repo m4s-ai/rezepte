@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getRecipes, homePath, renderRecipeHtml } from "../../lib/recipes";
+
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe }
+  }));
+}
+
+const { recipe } = Astro.props;
+const recipeHtml = renderRecipeHtml(recipe.body);
+---
+
+<BaseLayout title={recipe.title} description={recipe.description || recipe.excerpt}>
+  <main class="terminal-page detail-page">
+    <nav class="top-nav" aria-label="Navigation">
+      <a href={homePath()}>← Zur Übersicht</a>
+    </nav>
+
+    <header class="recipe-header">
+      <p class="terminal-prompt">m4s-ai@rezepte:~$ cat r/{recipe.slug}.md</p>
+      <h1>{recipe.title}</h1>
+      {(recipe.description || recipe.excerpt) && <p class="lede">{recipe.description || recipe.excerpt}</p>}
+      <div class="recipe-meta detail-meta">
+        {recipe.date && <time datetime={recipe.date}>{formatDate(recipe.date)}</time>}
+        {recipe.category && <span class="meta-pill">{recipe.category}</span>}
+        {recipe.tags.map((tag) => (
+          <span class="meta-pill">{tag}</span>
+        ))}
+      </div>
+    </header>
+
+    <article class="recipe-content" set:html={recipeHtml} />
+  </main>
+</BaseLayout>

@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, getRecipes, recipePath } from "../lib/recipes";
+
+const recipes = await getRecipes();
+const categories = [...new Set(recipes.map((recipe) => recipe.category).filter(Boolean))].sort(
+  (left, right) => left.localeCompare(right, "de")
+);
+const tags = [...new Set(recipes.flatMap((recipe) => recipe.tags))].sort((left, right) =>
+  left.localeCompare(right, "de")
+);
+const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} Rezepte`;
+---
+
+<BaseLayout title="Rezepte" description="Öffentliche Rezepte aus dem Second Brain.">
+  <main class="terminal-page" data-recipe-browser>
+    <header class="site-header">
+      <p class="terminal-prompt">m4s-ai@rezepte:~$ ls public-recipes</p>
+      <h1>Rezepte</h1>
+      <p class="lede">Öffentliche Rezepte aus dem Second Brain.</p>
+      <p class="status-line">{recipeCountLabel} veröffentlicht</p>
+    </header>
+
+    <section class="controls" aria-label="Rezeptfilter">
+      <label class="field">
+        <span>Suche</span>
+        <input data-search-input type="search" name="q" autocomplete="off" placeholder="Titel, Tag, Kategorie" />
+      </label>
+
+      <label class="field">
+        <span>Kategorie</span>
+        <select data-category-filter name="category">
+          <option value="">Alle Kategorien</option>
+          {categories.map((category) => <option value={category}>{category}</option>)}
+        </select>
+      </label>
+
+      <div class="tag-filter" aria-label="Schlagwörter">
+        <button class="tag-button" type="button" data-tag-filter="" aria-pressed="true">Alle</button>
+        {
+          tags.map((tag) => (
+            <button class="tag-button" type="button" data-tag-filter={tag} aria-pressed="false">
+              {tag}
+            </button>
+          ))
+        }
+      </div>
+
+      <p class="result-count" data-result-count>{recipeCountLabel}</p>
+    </section>
+
+    {
+      recipes.length > 0 ? (
+        <ol class="recipe-list" aria-label="Öffentliche Rezepte">
+          {recipes.map((recipe) => {
+            const searchText = [
+              recipe.title,
+              recipe.description,
+              recipe.excerpt,
+              recipe.category,
+              ...recipe.tags
+            ].join(" ");
+            return (
+              <li
+                class="recipe-row"
+                data-recipe-row
+                data-search-text={searchText}
+                data-category={recipe.category}
+                data-tags={recipe.tags.join("|||")}
+              >
+                <a class="recipe-link" href={recipePath(recipe.slug)}>
+                  <span class="recipe-title-line">
+                    <span class="recipe-title">{recipe.title}</span>
+                    {recipe.date && <time datetime={recipe.date}>{formatDate(recipe.date)}</time>}
+                  </span>
+                  {(recipe.description || recipe.excerpt) && (
+                    <span class="recipe-excerpt">{recipe.description || recipe.excerpt}</span>
+                  )}
+                  <span class="recipe-meta">
+                    {recipe.category && <span class="meta-pill">{recipe.category}</span>}
+                    {recipe.tags.map((tag) => (
+                      <span class="meta-pill" data-tag-pill>
+                        {tag}
+                      </span>
+                    ))}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      ) : (
+        <p class="empty-state">Keine öffentlichen Rezepte gefunden.</p>
+      )
+    }
+
+    <p class="empty-state" data-empty-results hidden>Keine Treffer gefunden.</p>
+  </main>
+
+  <script>
+    const browser = document.querySelector("[data-recipe-browser]");
+
+    if (browser) {
+      const rows = Array.from(browser.querySelectorAll("[data-recipe-row]"));
+      const searchInput = browser.querySelector("[data-search-input]");
+      const categoryFilter = browser.querySelector("[data-category-filter]");
+      const tagButtons = Array.from(browser.querySelectorAll("[data-tag-filter]"));
+      const resultCount = browser.querySelector("[data-result-count]");
+      const emptyResults = browser.querySelector("[data-empty-results]");
+      let activeTag = "";
+
+      const normalize = (value) => value.toLocaleLowerCase("de-DE").trim();
+      const labelForCount = (count, total) => {
+        if (total === 1) {
+          return count === 1 ? "1 Rezept" : "0 von 1 Rezept";
+        }
+
+        return `${count} von ${total} Rezepten`;
+      };
+
+      const applyFilters = () => {
+        const query = normalize(searchInput?.value || "");
+        const category = categoryFilter?.value || "";
+        let visible = 0;
+
+        for (const row of rows) {
+          const searchText = normalize(row.getAttribute("data-search-text") || "");
+          const rowCategory = row.getAttribute("data-category") || "";
+          const rowTags = (row.getAttribute("data-tags") || "").split("|||").filter(Boolean);
+          const matchesQuery = !query || searchText.includes(query);
+          const matchesCategory = !category || rowCategory === category;
+          const matchesTag = !activeTag || rowTags.includes(activeTag);
+          const matches = matchesQuery && matchesCategory && matchesTag;
+
+          row.hidden = !matches;
+          if (matches) {
+            visible += 1;
+          }
+        }
+
+        if (resultCount) {
+          resultCount.textContent = labelForCount(visible, rows.length);
+        }
+
+        if (emptyResults) {
+          emptyResults.hidden = visible > 0 || rows.length === 0;
+        }
+      };
+
+      searchInput?.addEventListener("input", applyFilters);
+      categoryFilter?.addEventListener("change", applyFilters);
+
+      for (const button of tagButtons) {
+        button.addEventListener("click", () => {
+          activeTag = button.getAttribute("data-tag-filter") || "";
+          for (const candidate of tagButtons) {
+            candidate.setAttribute(
+              "aria-pressed",
+              String(candidate.getAttribute("data-tag-filter") === activeTag)
+            );
+          }
+          applyFilters();
+        });
+      }
+
+      applyFilters();
+    }
+  </script>
+</BaseLayout>
