@@ -108,7 +108,8 @@ h1 {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(190px, 260px);
+  grid-template-columns: minmax(260px, 1fr) minmax(180px, 240px) minmax(220px, 280px) max-content;
+  align-items: end;
   gap: 14px;
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
@@ -134,39 +135,20 @@ h1 {
 
 .field input:focus,
 .field select:focus,
-.tag-button:focus-visible,
 .recipe-link:focus-visible,
 .top-nav a:focus-visible {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(57, 255, 121, 0.16);
 }
 
-.tag-filter {
-  display: flex;
-  grid-column: 1 / -1;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag-button {
-  min-height: 36px;
-  padding: 7px 11px;
-  color: var(--text);
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-}
-
-.tag-button[aria-pressed="true"] {
-  color: #001b08;
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
 .result-count {
-  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 44px;
   margin: 0;
   color: var(--amber);
+  white-space: nowrap;
 }
 
 .recipe-list {
@@ -365,6 +347,22 @@ time {
 .recipe-content td {
   padding: 8px 10px;
   border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .controls {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .controls .field:first-child,
+  .result-count {
+    grid-column: 1 / -1;
+  }
+
+  .result-count {
+    min-height: 0;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 720px) {

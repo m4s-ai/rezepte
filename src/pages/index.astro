@@ -6,9 +6,17 @@ const recipes = await getRecipes();
 const categories = [...new Set(recipes.map((recipe) => recipe.category).filter(Boolean))].sort(
   (left, right) => left.localeCompare(right, "de")
 );
-const tags = [...new Set(recipes.flatMap((recipe) => recipe.tags))].sort((left, right) =>
-  left.localeCompare(right, "de")
-);
+const tagCounts = new Map<string, number>();
+
+for (const recipe of recipes) {
+  for (const tag of recipe.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+}
+
+const tags = [...tagCounts.entries()]
+  .map(([tag, count]) => ({ tag, count }))
+  .sort((left, right) => right.count - left.count || left.tag.localeCompare(right.tag, "de"));
 const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} Rezepte`;
 ---
 
@@ -35,16 +43,13 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
         </select>
       </label>
 
-      <div class="tag-filter" aria-label="Schlagwörter">
-        <button class="tag-button" type="button" data-tag-filter="" aria-pressed="true">Alle</button>
-        {
-          tags.map((tag) => (
-            <button class="tag-button" type="button" data-tag-filter={tag} aria-pressed="false">
-              {tag}
-            </button>
-          ))
-        }
-      </div>
+      <label class="field">
+        <span>Schlagwort</span>
+        <select data-tag-filter name="tag">
+          <option value="">Alle Schlagwörter</option>
+          {tags.map(({ tag, count }) => <option value={tag}>{tag} ({count})</option>)}
+        </select>
+      </label>
 
       <p class="result-count" data-result-count>{recipeCountLabel}</p>
     </section>
@@ -104,10 +109,9 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       const rows = Array.from(browser.querySelectorAll("[data-recipe-row]"));
       const searchInput = browser.querySelector("[data-search-input]");
       const categoryFilter = browser.querySelector("[data-category-filter]");
-      const tagButtons = Array.from(browser.querySelectorAll("[data-tag-filter]"));
+      const tagFilter = browser.querySelector("[data-tag-filter]");
       const resultCount = browser.querySelector("[data-result-count]");
       const emptyResults = browser.querySelector("[data-empty-results]");
-      let activeTag = "";
 
       const normalize = (value) => value.toLocaleLowerCase("de-DE").trim();
       const labelForCount = (count, total) => {
@@ -121,6 +125,7 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       const applyFilters = () => {
         const query = normalize(searchInput?.value || "");
         const category = categoryFilter?.value || "";
+        const activeTag = tagFilter?.value || "";
         let visible = 0;
 
         for (const row of rows) {
@@ -149,19 +154,7 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
 
       searchInput?.addEventListener("input", applyFilters);
       categoryFilter?.addEventListener("change", applyFilters);
-
-      for (const button of tagButtons) {
-        button.addEventListener("click", () => {
-          activeTag = button.getAttribute("data-tag-filter") || "";
-          for (const candidate of tagButtons) {
-            candidate.setAttribute(
-              "aria-pressed",
-              String(candidate.getAttribute("data-tag-filter") === activeTag)
-            );
-          }
-          applyFilters();
-        });
-      }
+      tagFilter?.addEventListener("change", applyFilters);
 
       applyFilters();
     }
