@@ -108,7 +108,8 @@ h1 {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(180px, 240px) minmax(220px, 280px) max-content;
+  grid-template-columns:
+    minmax(260px, 1fr) minmax(180px, 240px) minmax(220px, 280px) max-content max-content;
   align-items: end;
   gap: 14px;
   padding: 22px 0;
@@ -135,10 +136,31 @@ h1 {
 
 .field input:focus,
 .field select:focus,
+.filter-reset:focus-visible,
 .recipe-link:focus-visible,
 .top-nav a:focus-visible {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(57, 255, 121, 0.16);
+}
+
+.filter-reset {
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--text-strong);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  outline: none;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+.filter-reset:hover {
+  color: var(--background);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .result-count {
@@ -378,8 +400,13 @@ time {
   }
 
   .controls .field:first-child,
+  .filter-reset,
   .result-count {
     grid-column: 1 / -1;
+  }
+
+  .filter-reset {
+    width: max-content;
   }
 
   .result-count {

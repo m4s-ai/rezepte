@@ -51,6 +51,10 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
         </select>
       </label>
 
+      <button class="filter-reset" type="button" data-reset-filters aria-label="Kategorie und Schlagwort zurücksetzen">
+        Zurücksetzen
+      </button>
+
       <p class="result-count" data-result-count>{recipeCountLabel}</p>
     </section>
 
@@ -110,6 +114,7 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       const searchInput = browser.querySelector("[data-search-input]");
       const categoryFilter = browser.querySelector("[data-category-filter]");
       const tagFilter = browser.querySelector("[data-tag-filter]");
+      const resetFiltersButton = browser.querySelector("[data-reset-filters]");
       const resultCount = browser.querySelector("[data-result-count]");
       const emptyResults = browser.querySelector("[data-empty-results]");
 
@@ -132,6 +137,12 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
         if (hasOption(tagFilter, tag)) {
           tagFilter.value = tag;
         }
+      };
+      const clearFilterParams = () => {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("category");
+        url.searchParams.delete("tag");
+        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
       };
       const labelForCount = (count, total) => {
         if (total === 1) {
@@ -174,6 +185,18 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       searchInput?.addEventListener("input", applyFilters);
       categoryFilter?.addEventListener("change", applyFilters);
       tagFilter?.addEventListener("change", applyFilters);
+      resetFiltersButton?.addEventListener("click", () => {
+        if (categoryFilter) {
+          categoryFilter.value = "";
+        }
+
+        if (tagFilter) {
+          tagFilter.value = "";
+        }
+
+        clearFilterParams();
+        applyFilters();
+      });
 
       applyQueryFilters();
       applyFilters();
