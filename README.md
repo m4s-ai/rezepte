@@ -43,4 +43,4 @@ Install the workflow template at `docs/second-brain-rezepte-sync.workflow.yml` i
 rabanopenclaw/second-brain/.github/workflows/sync-rezepte.yml
 ```
 
-Add the fine-grained token secret in `rabanopenclaw/second-brain` as `REZEPTE_PUSH_TOKEN`. The token needs push access to `m4s-ai/rezepte`.
+Add a write-enabled deploy key to `m4s-ai/rezepte`, then store the matching private key in `rabanopenclaw/second-brain` as the Actions secret `REZEPTE_DEPLOY_KEY`.

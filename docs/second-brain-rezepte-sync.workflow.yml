@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: m4s-ai/rezepte
-          token: ${{ secrets.REZEPTE_PUSH_TOKEN }}
+          ssh-key: ${{ secrets.REZEPTE_DEPLOY_KEY }}
           path: rezepte
 
       - name: Setup pnpm
