@@ -141,6 +141,22 @@ export function homePath(): string {
   return sitePath("/");
 }
 
+export function filteredHomePath(filters: { category?: string; tag?: string }): string {
+  const params = new URLSearchParams();
+
+  if (filters.category) {
+    params.set("category", filters.category);
+  }
+
+  if (filters.tag) {
+    params.set("tag", filters.tag);
+  }
+
+  const query = params.toString();
+  const path = homePath();
+  return query ? `${path}?${query}` : path;
+}
+
 export function formatDate(date: string): string {
   if (!date) {
     return "";

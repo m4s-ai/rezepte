@@ -114,6 +114,25 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       const emptyResults = browser.querySelector("[data-empty-results]");
 
       const normalize = (value) => value.toLocaleLowerCase("de-DE").trim();
+      const hasOption = (select, value) =>
+        Boolean(
+          select &&
+            value &&
+            Array.from(select.options).some((option) => option.value === value)
+        );
+      const applyQueryFilters = () => {
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get("category") || "";
+        const tag = params.get("tag") || "";
+
+        if (hasOption(categoryFilter, category)) {
+          categoryFilter.value = category;
+        }
+
+        if (hasOption(tagFilter, tag)) {
+          tagFilter.value = tag;
+        }
+      };
       const labelForCount = (count, total) => {
         if (total === 1) {
           return count === 1 ? "1 Rezept" : "0 von 1 Rezept";
@@ -156,6 +175,7 @@ const recipeCountLabel = recipes.length === 1 ? "1 Rezept" : `${recipes.length} 
       categoryFilter?.addEventListener("change", applyFilters);
       tagFilter?.addEventListener("change", applyFilters);
 
+      applyQueryFilters();
       applyFilters();
     }
   </script>

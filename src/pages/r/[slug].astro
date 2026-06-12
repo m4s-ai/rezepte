@@ -1,6 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatDate, getRecipes, homePath, renderRecipeHtml } from "../../lib/recipes";
+import {
+  filteredHomePath,
+  formatDate,
+  getRecipes,
+  homePath,
+  renderRecipeHtml
+} from "../../lib/recipes";
 
 export async function getStaticPaths() {
   const recipes = await getRecipes();
@@ -26,9 +32,15 @@ const recipeHtml = renderRecipeHtml(recipe.body);
       {(recipe.description || recipe.excerpt) && <p class="lede">{recipe.description || recipe.excerpt}</p>}
       <div class="recipe-meta detail-meta">
         {recipe.date && <time datetime={recipe.date}>{formatDate(recipe.date)}</time>}
-        {recipe.category && <span class="meta-pill">{recipe.category}</span>}
+        {recipe.category && (
+          <a class="meta-pill meta-pill-link" href={filteredHomePath({ category: recipe.category })}>
+            {recipe.category}
+          </a>
+        )}
         {recipe.tags.map((tag) => (
-          <span class="meta-pill">{tag}</span>
+          <a class="meta-pill meta-pill-link" href={filteredHomePath({ tag })}>
+            {tag}
+          </a>
         ))}
       </div>
     </header>

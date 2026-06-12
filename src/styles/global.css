@@ -228,6 +228,29 @@ time {
   border-radius: 6px;
 }
 
+.meta-pill-link {
+  color: var(--text-strong);
+  text-decoration: none;
+  outline: none;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.meta-pill-link:hover {
+  color: var(--background);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.meta-pill-link:focus-visible {
+  color: var(--text-strong);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(57, 255, 121, 0.16);
+}
+
 .empty-state {
   margin: 24px 0 0;
   padding: 18px;
