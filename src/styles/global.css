@@ -72,6 +72,20 @@ button {
   padding: 48px 0 64px;
 }
 
+.site-footer {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto 32px;
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  border-top: 1px solid rgba(117, 201, 131, 0.35);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 .site-header,
 .recipe-header {
   padding: 0 0 28px;
@@ -416,9 +430,18 @@ time {
 }
 
 @media (max-width: 720px) {
-  .terminal-page {
+  .terminal-page,
+  .site-footer {
     width: min(100% - 24px, 1120px);
+  }
+
+  .terminal-page {
     padding: 28px 0 44px;
+  }
+
+  .site-footer {
+    margin-bottom: 24px;
+    padding-top: 14px;
   }
 
   h1 {
