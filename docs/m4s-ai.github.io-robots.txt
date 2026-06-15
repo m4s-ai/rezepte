@@ -1,0 +1,35 @@
+# Host-root robots.txt template for https://m4s-ai.github.io/robots.txt
+# Keep this in the m4s-ai.github.io Pages root repo to block the recipe project.
+
+User-agent: *
+Disallow: /rezepte/
+
+User-agent: GPTBot
+Disallow: /rezepte/
+
+User-agent: ChatGPT-User
+Disallow: /rezepte/
+
+User-agent: OAI-SearchBot
+Disallow: /rezepte/
+
+User-agent: ClaudeBot
+Disallow: /rezepte/
+
+User-agent: anthropic-ai
+Disallow: /rezepte/
+
+User-agent: PerplexityBot
+Disallow: /rezepte/
+
+User-agent: Google-Extended
+Disallow: /rezepte/
+
+User-agent: Applebot-Extended
+Disallow: /rezepte/
+
+User-agent: CCBot
+Disallow: /rezepte/
+
+User-agent: Bytespider
+Disallow: /rezepte/

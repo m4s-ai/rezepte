@@ -6,6 +6,8 @@ Only Markdown recipes from `rabanopenclaw/second-brain/Atlas/Recipes` with `publ
 
 ## Local Commands
 
+Use Node.js `>=22.12.0` and pnpm `10.32.1`.
+
 ```sh
 pnpm install
 pnpm sync:recipes -- --input ../second-brain/Atlas/Recipes
@@ -44,3 +46,16 @@ rabanopenclaw/second-brain/.github/workflows/sync-rezepte.yml
 ```
 
 Add a write-enabled deploy key to `m4s-ai/rezepte`, then store the matching private key in `rabanopenclaw/second-brain` as the Actions secret `REZEPTE_DEPLOY_KEY`.
+
+## Crawling And Indexing
+
+Every generated HTML page includes `noindex,nofollow,noarchive,noimageindex`,
+and this repo publishes `/rezepte/robots.txt`.
+
+Because this is a GitHub Pages project site, crawlers normally look for the
+authoritative robots policy at `https://m4s-ai.github.io/robots.txt`, not at
+`https://m4s-ai.github.io/rezepte/robots.txt`. To make crawler blocking
+authoritative for the live project URL, create or update the `m4s-ai.github.io`
+Pages root repo with a host-root `robots.txt` equivalent to
+`docs/m4s-ai.github.io-robots.txt`, or move the project to a custom domain where
+this repo's `public/robots.txt` is served from the domain root.

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
@@ -11,7 +14,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "astro": "^5.13.0",
+    "astro": "^6.4.6",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0"
   },
@@ -19,6 +22,11 @@
     "@types/markdown-it": "^14.1.2",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.28.1"
+    }
   },
   "packageManager": "pnpm@10.32.1"
 }

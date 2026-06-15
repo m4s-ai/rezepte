@@ -69,6 +69,9 @@ explicitly asks to keep them running.
   the user requested one inseparable feature.
 - Treat GitHub Pages deployment as the live verification path after pushing to
   `main`.
+- This is a GitHub Pages project site. `public/robots.txt` deploys under
+  `/rezepte/robots.txt`, not host-root `/robots.txt`; use HTML `noindex` here
+  and a host-root Pages repo or custom domain for authoritative crawler blocks.
 
 ## UI Guidelines
 
