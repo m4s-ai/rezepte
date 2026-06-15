@@ -1,0 +1,27 @@
+<section class="auth-gate" data-auth-gate aria-labelledby="auth-title">
+  <div class="auth-shell">
+    <p class="terminal-prompt">m4s-ai@rezepte:~$ login</p>
+    <h1 id="auth-title">Zugang erforderlich</h1>
+    <p class="auth-copy">Dieses Rezeptarchiv ist nur mit Passwort sichtbar.</p>
+
+    <form class="auth-form" data-auth-form>
+      <label class="field auth-field">
+        <span>Passwort</span>
+        <input data-auth-password type="password" name="password" autocomplete="current-password" required />
+      </label>
+
+      <button class="auth-submit" data-auth-submit type="submit">Einloggen</button>
+    </form>
+
+    <p class="auth-message" data-auth-message role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<script>
+  import { initializeAuthGate } from "../lib/auth-gate";
+
+  initializeAuthGate({
+    expectedHash: import.meta.env.PUBLIC_REZEPTE_ACCESS_HASH,
+    cookiePath: import.meta.env.BASE_URL
+  });
+</script>

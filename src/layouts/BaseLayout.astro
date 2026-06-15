@@ -1,4 +1,5 @@
 ---
+import AuthGate from "../components/AuthGate.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -20,13 +21,16 @@ const pageTitle = title === "Rezepte" ? "Rezepte" : `${title} · Rezepte`;
     <meta name="robots" content="noindex,nofollow,noarchive,noimageindex" />
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <slot />
-    <footer class="site-footer" aria-label="Rechtlicher Hinweis">
-      <p>
-        Privates, nicht kommerzielles Rezeptarchiv ohne Einnahmen. Urheber- und Nutzungsrechte verbleiben bei den
-        jeweiligen Rechteinhabern.
-      </p>
-    </footer>
+  <body class="auth-pending" data-auth-state="pending">
+    <AuthGate />
+    <div class="auth-content" data-auth-content aria-hidden="true">
+      <slot />
+      <footer class="site-footer" aria-label="Rechtlicher Hinweis">
+        <p>
+          Privates, nicht kommerzielles Rezeptarchiv ohne Einnahmen. Urheber- und Nutzungsrechte verbleiben bei den
+          jeweiligen Rechteinhabern.
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

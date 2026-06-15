@@ -43,6 +43,8 @@ jobs:
         run: pnpm test
 
       - name: Build
+        env:
+          PUBLIC_REZEPTE_ACCESS_HASH: ${{ vars.PUBLIC_REZEPTE_ACCESS_HASH || secrets.PUBLIC_REZEPTE_ACCESS_HASH }}
         run: pnpm build
 
       - name: Upload artifact
