@@ -16,6 +16,32 @@ pnpm build
 pnpm dev
 ```
 
+## Client-Only Access Gate
+
+The site uses a browser-only password gate as a deterrent. GitHub Pages still
+serves the generated HTML and assets publicly, so this is not real access
+control and can be bypassed by direct requests or client-side inspection.
+
+Set `PUBLIC_REZEPTE_ACCESS_HASH` to the lowercase SHA-256 hex digest of the
+shared password before building:
+
+```sh
+read -rsp "Passwort: " REZEPTE_PASSWORD
+printf '%s' "$REZEPTE_PASSWORD" | sha256sum
+unset REZEPTE_PASSWORD
+PUBLIC_REZEPTE_ACCESS_HASH="<sha256-hex>" pnpm build
+```
+
+For GitHub Pages, configure `PUBLIC_REZEPTE_ACCESS_HASH` as a repository
+variable or secret. The workflow passes that value to `pnpm build`. If the value
+is missing or invalid, the browser keeps the recipes hidden and shows a German
+configuration error.
+
+The access cookie is `rezepte_access` with `Path=/rezepte/`, `SameSite=Lax`,
+`Secure`, and a 30-day max age. Local failed-attempt throttling uses
+`rezepte_auth_failures` and `rezepte_auth_next_allowed_at` in localStorage; it is
+client-side and therefore bypassable.
+
 ## Recipe Frontmatter
 
 Required:
