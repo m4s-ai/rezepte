@@ -69,6 +69,9 @@ explicitly asks to keep them running.
   the user requested one inseparable feature.
 - Treat GitHub Pages deployment as the live verification path after pushing to
   `main`.
+- Keep `docs/second-brain-rezepte-sync.workflow.yml` on a Node version that
+  satisfies `package.json` engines; that external sync workflow runs this
+  repo's `pnpm test` and `pnpm build` before pushing generated recipes.
 - This is a GitHub Pages project site. `public/robots.txt` deploys under
   `/rezepte/robots.txt`, not host-root `/robots.txt`; use HTML `noindex` here
   and a host-root Pages repo or custom domain for authoritative crawler blocks.
