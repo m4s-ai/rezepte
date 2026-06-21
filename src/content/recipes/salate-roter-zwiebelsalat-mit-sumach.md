@@ -18,9 +18,10 @@ Sehr schneller Zwiebelsalat aus roten Zwiebeln, Sumach, Petersilie und Zitrone. 
 
 ## Quelle
 
-- TikTok: https://www.tiktok.com/@alyonkasworld/video/7650948136315211041
-- Creator: @alyonkasworld
-- Hinweis: Der TikTok-Post nennt Zutaten, aber keine exakten Mengen. Die Mengen unten sind praktische Richtwerte und nach Geschmack anzupassen.
+- TikTok (alyonkasworld): https://www.tiktok.com/@alyonkasworld/video/7650948136315211041
+- TikTok (abbasxo): https://www.tiktok.com/@abbasxo/video/7652370519316040993
+- Creator: @alyonkasworld, @abbasxo (Abbas Mrad)
+- Hinweis: Die TikTok-Posts nennen Zutaten, aber keine exakten Mengen. Die Mengen unten sind praktische Richtwerte und nach Geschmack anzupassen.
 
 ## Eckdaten
 
