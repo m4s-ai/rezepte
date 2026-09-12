@@ -48,6 +48,14 @@ category: Desserts-Kuchen
 - Frisch frittiert schmecken die Strauben am besten; sie werden beim Liegen schnell weich.
 - Vorsicht beim Frittieren mit heißem Öl – Dosierflasche nicht zu heiß/fest werden lassen.
 
+## Variationen (aus dem Video)
+
+Das Video zeigt 3 Beleg-Varianten („welcher Typ bist du?"), per Frame-Analyse/-Caption erfasst:
+
+1. **Staubzucker** – klassisch großzügig über den Teigturm gestreut.
+2. **Rote Marmelade/Konfitüre** – in die Mitte/über die Strauben gegeben (Frucht optisch nicht eindeutig; gängig Preiselbeere/Erdbeere).
+3. **Vanilleeis** – zum Servieren (laut Caption/Zutatenliste).
+
 ## Offene Punkte
 
-- Das Video zeigt **3 Variationen** („welcher Typ bist du?"), deren Belege nicht über das Bildmaterial erfasst werden konnten (Vision nicht verfügbar). Die genauen drei Beleg-Varianten sind nicht angegeben – im Resourceclip waren u. a. Staubzucker und Vanilleeis zu sehen.
+- Die genaue Marmeladenfrucht ist im Video nicht sicher erkennbar – Preiselbeere ist die klassische Strauben-Kombination, aber nicht verifiziert.
