@@ -20,7 +20,7 @@ Frische Tomatensauce mit cremig schmelzendem Mozzarella und Basilikum über al d
 ## Eckdaten
 
 - Zubereitung: ca. 10 min Vorbereitung + 15 min Kochen
-- Portionen: ca. 2 (bei 400 g Pasta)
+- Portionen: ca. 2 — **kontextabhängig**: als einzelne Hauptmahlzeit eher 3–4 Portionen (400 g Pasta + 200 g Mozzarella sind reichlich je Person); als Menübestandteil oder mit Beilagensalat passt „ca. 2". Die Quellen-Angabe ist die engste Auslegung, keine starre Zahl.
 
 ## Zutaten
 
