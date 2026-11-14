@@ -6,7 +6,7 @@ tags:
   - zutat/rinderhack
   - zutat/reis
   - zutat/cheddar
-  - zutat/kidney-bohnen
+  - zutat/kidneybohnen
   - anlass/party
 category: Pfannen-Currys
 ---
